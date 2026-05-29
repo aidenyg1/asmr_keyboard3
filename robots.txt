@@ -1,4 +1,0 @@
-User-agent: *
-Allow: /
-
-Sitemap: https://asmr-keyboard3.pages.dev/sitemap.xml
