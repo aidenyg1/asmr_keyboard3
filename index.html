@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>키보드 ASMR - 시나모롤 타건음 & 집중력을 위한 타이핑 소리 스테이션</title>
+    <meta name="description" content="최고의 키보드 ASMR 경험을 즐기세요. 시나모롤 테마와 고품질 타건음으로 휴식과 집중력을 높여주는 나만의 ASMR 스테이션입니다. 무료로 기계식 키보드 소리를 체험해 보세요.">
+    <meta name="keywords" content="키보드 ASMR, ASMR, 시나모롤, 타건음, 타이핑 소리, 기계식 키보드, 휴식, 집중력, 백색소음, 키보드 소리">
+    <meta name="author" content="Personal ASMR Station">
+    
+    <!-- Open Graph / Facebook / Kakao -->
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://asmr-keyboard3.pages.dev/">
+    <meta property="og:title" content="키보드 ASMR - 시나모롤 타건음 스테이션">
+    <meta property="og:description" content="시나모롤과 함께하는 고품질 키보드 타건음. 지금 바로 휴식과 집중력을 높여보세요.">
+    <meta property="og:image" content="https://asmr-keyboard3.pages.dev/og-image.jpg">
+
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image">
+    <meta property="twitter:url" content="https://asmr-keyboard3.pages.dev/">
+    <meta property="twitter:title" content="키보드 ASMR - 시나모롤 타건음 스테이션">
+    <meta property="twitter:description" content="시나모롤과 함께하는 고품질 키보드 타건음. 지금 바로 휴식과 집중력을 높여보세요.">
+    <meta property="twitter:image" content="https://asmr-keyboard3.pages.dev/og-image.jpg">
+
+    <!-- Canonical Link -->
+    <link rel="canonical" href="https://asmr-keyboard3.pages.dev/">
+
+    <meta name="google-site-verification" content="SOalM1ageMOJ7lFgxR4AQZbyw-KCvvMZC6Ltus920yU" />
+    <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-1410909345007425"
+     crossorigin="anonymous"></script>
+    <style>
+        :root {
+            --bg: #050505;
+            --kb-frame: #0d0d0d;
+            --key: #181818;
+            --key-active: #ffffff;
+            --accent: #c084fc; /* Soft Purple for ASMR vibe */
+            --text-muted: #666;
+        }
+
+        * { margin: 0; padding: 0; box-sizing: border-box; }
+
+        body {
+            background-color: var(--bg);
+            color: #fff;
+            font-family: 'Inter', 'Noto Sans KR', -apple-system, sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            overflow-x: hidden;
+        }
+
+        header {
+            width: 100%;
+            padding: 20px 0;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            z-index: 10;
+        }
+
+        nav {
+            margin-top: 15px;
+            display: flex;
+            gap: 20px;
+        }
+
+        nav a {
+            color: var(--text-muted);
+            text-decoration: none;
+            font-size: 0.8rem;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--accent);
+        }
+
+        .header-content { text-align: center; margin-bottom: 20px; }
+        .header-content h1 { 
+            font-weight: 200; 
+            letter-spacing: 12px; 
+            font-size: 0.9rem; 
+            color: #555; 
+            margin-bottom: 15px; 
+            text-transform: uppercase;
+        }
+
+        .status-badge {
+            display: inline-block;
+            padding: 8px 20px;
+            background: rgba(192, 132, 252, 0.1);
+            border: 1px solid rgba(192, 132, 252, 0.3);
+            border-radius: 20px;
+            color: var(--accent);
+            font-size: 0.75rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            padding: 40px 20px;
+        }
+
+        .kb-container {
+            position: relative;
+            margin-bottom: 60px;
+        }
+
+        .kb-case {
+            background: var(--kb-frame);
+            padding: 40px;
+            border-radius: 40px;
+            box-shadow: 0 50px 100px rgba(0,0,0,0.8);
+            border: 1px solid #1a1a1a;
+            position: relative;
+        }
+
+        .kb-case::before {
+            content: '';
+            position: absolute;
+            top: -2px; left: -2px; right: -2px; bottom: -2px;
+            background: linear-gradient(145deg, #222, #000);
+            z-index: -1;
+            border-radius: 42px;
+        }
+
+        .row { display: flex; gap: 10px; justify-content: center; margin-bottom: 10px; }
+
+        .key {
+            background: var(--key);
+            color: #444;
+            height: 65px;
+            min-width: 65px;
+            padding: 0 15px;
+            border-radius: 14px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            font-weight: 500;
+            font-size: 13px;
+            transition: all 0.05s cubic-bezier(0.2, 0, 0, 1);
+            border: 1px solid #000;
+            box-shadow: 0 8px 0 #000;
+        }
+
+        .key.active {
+            transform: translateY(6px);
+            box-shadow: 0 1px 0 #000;
+            background: #222;
+            color: #eee;
+            border-color: var(--accent);
+        }
+
+        /* Special Keys */
+        .key.backspace { min-width: 130px; }
+        .key.tab { min-width: 100px; }
+        .key.caps { min-width: 120px; }
+        .key.enter { min-width: 145px; }
+        .key.shift { min-width: 190px; }
+        .key.space { min-width: 500px; }
+
+        .loading-overlay {
+            position: fixed;
+            top: 0; left: 0; width: 100%; height: 100%;
+            background: #000;
+            z-index: 1000;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            transition: opacity 1s ease;
+        }
+
+        .spinner {
+            width: 30px;
+            height: 30px;
+            border: 2px solid rgba(192, 132, 252, 0.2);
+            border-top-color: var(--accent);
+            border-radius: 50%;
+            animation: spin 0.8s linear infinite;
+            margin-bottom: 20px;
+        }
+
+        @keyframes spin { to { transform: rotate(360deg); } }
+
+        .footer {
+            position: fixed;
+            bottom: 30px;
+            color: #222;
+            font-size: 0.7rem;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+        }
+    </style>
+</head>
+<body>
+
+    <div id="loading" class="loading-overlay">
+        <div class="spinner"></div>
+        <p style="color: #666; font-size: 0.8rem; letter-spacing: 2px;">LOADING LOCAL SOUND BANK...</p>
+    </div>
+
+    <header>
+        <div class="header-content">
+            <h1>PERSONAL ASMR STATION</h1>
+            <div class="status-badge" id="status-text">ANALYZING AUDIO FILE...</div>
+        </div>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="about.html">About</a>
+            <a href="privacy.html">Privacy</a>
+            <a href="contact.html">Contact</a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="kb-container">
+            <div class="kb-case">
+                <div class="kb-frame">
+                    <div class="row">
+                        <div class="key" data-key="Backquote">`</div>
+                        <div class="key" data-key="Digit1">1</div><div class="key" data-key="Digit2">2</div><div class="key" data-key="Digit3">3</div><div class="key" data-key="Digit4">4</div><div class="key" data-key="Digit5">5</div><div class="key" data-key="Digit6">6</div><div class="key" data-key="Digit7">7</div><div class="key" data-key="Digit8">8</div><div class="key" data-key="Digit9">9</div><div class="key" data-key="Digit0">0</div>
+                        <div class="key" data-key="Minus">-</div><div class="key" data-key="Equal">=</div>
+                        <div class="key backspace" data-key="Backspace">DELETE</div>
+                    </div>
+                    <div class="row">
+                        <div class="key tab" data-key="Tab">TAB</div>
+                        <div class="key" data-key="KeyQ">Q</div><div class="key" data-key="KeyW">W</div><div class="key" data-key="KeyE">E</div><div class="key" data-key="KeyR">R</div><div class="key" data-key="KeyT">T</div><div class="key" data-key="KeyY">Y</div><div class="key" data-key="KeyU">U</div><div class="key" data-key="KeyI">I</div><div class="key" data-key="KeyO">O</div><div class="key" data-key="KeyP">P</div>
+                        <div class="key" data-key="BracketLeft">[</div><div class="key" data-key="BracketRight">]</div><div class="key" data-key="Backslash">\</div>
+                    </div>
+                    <div class="row">
+                        <div class="key caps" data-key="CapsLock">CAPS</div>
+                        <div class="key" data-key="KeyA">A</div><div class="key" data-key="KeyS">S</div><div class="key" data-key="KeyD">D</div><div class="key" data-key="KeyF">F</div><div class="key" data-key="KeyG">G</div><div class="key" data-key="KeyH">H</div><div class="key" data-key="KeyJ">J</div><div class="key" data-key="KeyK">K</div><div class="key" data-key="KeyL">L</div>
+                        <div class="key" data-key="Semicolon">;</div><div class="key" data-key="Quote">'</div>
+                        <div class="key enter" data-key="Enter">RETURN</div>
+                    </div>
+                    <div class="row">
+                        <div class="key shift" data-key="ShiftLeft">SHIFT</div>
+                        <div class="key" data-key="KeyZ">Z</div><div class="key" data-key="KeyX">X</div><div class="key" data-key="KeyC">C</div><div class="key" data-key="KeyV">V</div><div class="key" data-key="KeyB">B</div><div class="key" data-key="KeyN">N</div><div class="key" data-key="KeyM">M</div>
+                        <div class="key" data-key="Comma">,</div><div class="key" data-key="Period">.</div><div class="key" data-key="Slash">/</div>
+                        <div class="key shift" data-key="ShiftRight">SHIFT</div>
+                    </div>
+                    <div class="row">
+                        <div class="key" style="min-width: 90px;">CTRL</div>
+                        <div class="key" style="min-width: 90px;">OPT</div>
+                        <div class="key" style="min-width: 90px;">CMD</div>
+                        <div class="key space" data-key="Space"></div>
+                        <div class="key" style="min-width: 90px;">CMD</div>
+                        <div class="key" style="min-width: 90px;">OPT</div>
+                        <div class="key" style="min-width: 90px;">CTRL</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <section class="content-section" style="max-width: 800px; line-height: 1.8; color: #aaa; font-size: 0.95rem;">
+            <h2 style="color: #eee; margin-bottom: 20px; font-weight: 300; letter-spacing: 2px;">나만의 키보드 ASMR 스테이션: 소리로 찾는 휴식</h2>
+            <p style="margin-bottom: 20px;">
+                ASMR(자율감각 쾌락반응)은 특정한 청각적 또는 시각적 자극에 반응하여 나타나는 심리적 안정감이나 쾌감을 의미합니다. 
+                특히 키보드 타건음은 규칙적이면서도 부드러운 리듬감을 제공하여 많은 사람들에게 집중력 향상과 스트레스 해소의 도구로 사랑받고 있습니다. 
+                본 스테이션은 단순한 타이핑 경험을 넘어, 정교하게 튜닝된 오디오 엔진을 통해 사용자에게 최상의 청각적 휴식을 제공합니다.
+            </p>
+
+            <h3 style="color: #eee; margin-bottom: 15px; font-weight: 300; letter-spacing: 1px;">시나모롤과 함께하는 특별한 타건음 경험</h3>
+            <p style="margin-bottom: 20px;">
+                우리는 귀여운 시나모롤 테마와 함께 고품질의 기계식 키보드 타건음을 결합했습니다. 
+                Web Audio API를 활용한 실시간 오디오 프로세싱 기술은 매 타건 시 미세한 피치 변화와 다이내믹스를 생성하여, 
+                마치 실제 고급 기계식 키보드를 사용하는 듯한 입체적인 공간감을 구현합니다. 
+                부드러운 저음과 선명한 고음이 조화된 사운드는 당신의 작업 환경을 더욱 안락하게 만들어 줄 것입니다.
+            </p>
+
+            <h3 style="color: #eee; margin-bottom: 15px; font-weight: 300; letter-spacing: 1px;">이용 가이드 및 최적의 환경</h3>
+            <p style="margin-bottom: 20px;">
+                최상의 ASMR 경험을 위해 <strong>오픈형 헤드폰</strong> 사용을 권장합니다. 
+                화면의 가상 키보드를 클릭하거나 실제 키보드를 타이핑하여 다양한 소리의 층을 느껴보세요. 
+                스페이스바와 엔터 키 등 각 키마다 설정된 고유한 울림은 당신의 타이핑에 리듬을 더해줍니다. 
+                잠시 눈을 감고 소리에 집중하며, 바쁜 일상 속에서 짧지만 깊은 명상의 시간을 가져보시길 바랍니다.
+            </p>
+        </section>
+    </main>
+
+    <footer style="width: 100%; padding: 40px 20px; border-top: 1px solid #111; margin-top: 60px; text-align: center;">
+        <div style="margin-bottom: 20px; display: flex; justify-content: center; gap: 30px;">
+            <a href="about.html" style="color: #444; text-decoration: none; font-size: 0.75rem;">ABOUT</a>
+            <a href="privacy.html" style="color: #444; text-decoration: none; font-size: 0.75rem;">PRIVACY</a>
+            <a href="contact.html" style="color: #444; text-decoration: none; font-size: 0.75rem;">CONTACT</a>
+        </div>
+        <p style="color: #222; font-size: 0.7rem; text-transform: uppercase; letter-spacing: 3px;">
+            &copy; 2026 PERSONAL ASMR STATION. ALL RIGHTS RESERVED.
+        </p>
+    </footer>
+
+    <script>
+        const audioCtx = new (window.AudioContext || window.webkitAudioContext)();
+        let soundBuffer = null;
+        // [수정] 새로 업로드하신 MP4 영상 파일 이름을 적용했습니다.
+        const localFilePath = '[ASMR] 💙🦋시나모롤과 함께 키보드asmr(10분)_1.mp4';
+
+        // 1. 오디오 로드 및 슬라이싱 엔진
+        async function loadSoundBank() {
+            const statusText = document.getElementById('status-text');
+            const loadingOverlay = document.getElementById('loading');
+            
+            try {
+                const response = await fetch(localFilePath);
+                if (!response.ok) throw new Error('File not found');
+                
+                const arrayBuffer = await response.arrayBuffer();
+                // MP4 파일에서도 오디오 트랙을 자동으로 추출하여 디코딩합니다.
+                soundBuffer = await audioCtx.decodeAudioData(arrayBuffer);
+                
+                statusText.innerText = 'VIDEO AUDIO READY';
+                setTimeout(() => {
+                    loadingOverlay.style.opacity = '0';
+                    setTimeout(() => loadingOverlay.style.display = 'none', 1000);
+                }, 500);
+            } catch (err) {
+                console.warn('Local file load failed. Falling back to high-end synthesis.');
+                statusText.innerText = 'SYNTHESIS ENGINE ACTIVE';
+                loadingOverlay.style.display = 'none';
+            }
+        }
+
+        // 2. 스마트 타건음 재생 (영상 속 고정된 하나의 소리 사용)
+        function playSmartSound(code) {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+
+            if (soundBuffer) {
+                const source = audioCtx.createBufferSource();
+                source.buffer = soundBuffer;
+                
+                const masterGain = audioCtx.createGain();
+                masterGain.gain.value = 5.0; // 영상 소리에 맞춰 볼륨 조정
+
+                const compressor = audioCtx.createDynamicsCompressor();
+                compressor.threshold.setValueAtTime(-24, audioCtx.currentTime);
+                compressor.knee.setValueAtTime(30, audioCtx.currentTime);
+                compressor.ratio.setValueAtTime(12, audioCtx.currentTime);
+                compressor.attack.setValueAtTime(0.003, audioCtx.currentTime);
+                compressor.release.setValueAtTime(0.25, audioCtx.currentTime);
+                
+                // [수정] 영상의 특정 지점(초)을 설정하세요. 
+                // 예: 12.5초 지점의 소리를 쓰려면 12.5로 변경
+                const fixedOffset = 15.0; 
+                
+                const filter = audioCtx.createBiquadFilter();
+                filter.type = 'lowpass';
+                filter.frequency.value = 7000; 
+                
+                let pitch = 1.0 + (Math.random() * 0.02 - 0.01);
+                let volMult = 1.0;
+
+                if (code === 'Space') {
+                    pitch *= 0.88;
+                    volMult = 1.2;
+                }
+
+                const individualGain = audioCtx.createGain();
+                individualGain.gain.value = volMult;
+
+                source.playbackRate.value = pitch;
+                
+                source.connect(filter);
+                filter.connect(compressor);
+                compressor.connect(individualGain);
+                individualGain.connect(masterGain);
+                masterGain.connect(audioCtx.destination);
+                
+                const playDuration = 0.4; 
+                source.start(0, fixedOffset, playDuration);
+                
+                individualGain.gain.exponentialRampToValueAtTime(0.001, audioCtx.currentTime + playDuration);
+            } else {
+                // 백업용 합성음 (이전 버전의 Thock 소리)
+                playBackupSynth(code);
+            }
+        }
+
+        function playBackupSynth(code) {
+            const now = audioCtx.currentTime;
+            const osc = audioCtx.createOscillator();
+            const g = audioCtx.createGain();
+            osc.type = 'sine';
+            let f = code === 'Space' ? 70 : 100;
+            osc.frequency.setValueAtTime(f, now);
+            osc.frequency.exponentialRampToValueAtTime(f/2, now + 0.1);
+            g.gain.setValueAtTime(0.4, now);
+            g.gain.exponentialRampToValueAtTime(0.001, now + 0.1);
+            osc.connect(g).connect(audioCtx.destination);
+            osc.start(); osc.stop(now + 0.1);
+        }
+
+        // 4. 입력 핸들러
+        window.addEventListener('keydown', (e) => {
+            if (e.repeat) return;
+            const key = document.querySelector(`.key[data-key="${e.code}"]`);
+            if (key) {
+                key.classList.add('active');
+                playSmartSound(e.code);
+            }
+        });
+
+        window.addEventListener('keyup', (e) => {
+            const key = document.querySelector(`.key[data-key="${e.code}"]`);
+            if (key) key.classList.remove('active');
+        });
+
+        document.querySelectorAll('.key').forEach(k => {
+            k.addEventListener('mousedown', () => {
+                k.classList.add('active');
+                playSmartSound(k.dataset.key);
+            });
+            k.addEventListener('mouseup', () => k.classList.remove('active'));
+        });
+
+        // 초기화
+        loadSoundBank();
+        document.body.addEventListener('click', () => {
+            if (audioCtx.state === 'suspended') audioCtx.resume();
+        }, { once: true });
+    </script>
+</body>
+</html>
