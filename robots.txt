@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+
+# Sitemap URL
+Sitemap: https://asmr-keyboard3.pages.dev/sitemap.xml
